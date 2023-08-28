@@ -30,8 +30,8 @@ def recommend():
     print(type(idList))
     print(recommendedMovies)
     if type(recommendedMovies) == type('string'):  # no such movie found in the database
-        # returning error message
-        return Response(json.dumps({"Success": "False", "Response": 404}), mimetype="application/json")
+        returning error message
+    return Response(json.dumps({"Success": "False", "Response": 404}), mimetype="application/json")
     else:
         print("--- %s seconds ---" % (time.time() - start_time))
         return Response(json.dumps({"imdb_id": imdb_id, "recommendation": idList, "Success": True, "Response": 200}), mimetype="application/json")
